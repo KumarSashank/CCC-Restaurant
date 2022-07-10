@@ -27,7 +27,7 @@ div.container {
 /* set containter size to phone*/
 @media only screen and (max-device-width: 600px) {
     div.container {
-        width: 300px;
+        min-width: 300px;
     }
     
 }
