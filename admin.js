@@ -12,7 +12,7 @@ function displayItems(){
 
     
 
-    const biryaniData= foodItem.filter((item)=>item.category=='biryani');
+    var biryaniData= foodItem.filter((item)=>item.category=='biryani');
     const chickenData= foodItem.filter((item)=>item.category=='chicken');
     const PaneerData= foodItem.filter((item)=>item.category=='paneer');
     const vegetableData= foodItem.filter((item)=>item.category=='vegetable');
@@ -31,7 +31,11 @@ function displayItems(){
         cart.setAttribute('class','fa fa-shopping-cart add-to-cart');
         cart.setAttribute('id',item.id)
 
+        var edit= document.createElement('i');
+        edit.setAttribute('class','uil uil-pen');
+
         cardTop.appendChild(cart);
+        cardTop.appendChild(edit);
 
         var del_item=document.createElement('i');
         del_item.setAttribute('class','uil uil-trash-alt');
@@ -61,15 +65,6 @@ function displayItems(){
         
     })
 
-    // document.getElementById('del_item_id').onclick=deleteItem();
-    // function deleteItem(){
-    //     var itemToDel= this.parentNode.nextSibling.innerText;
-    //     var delObj= foodItem.find(element=>element.name==itemToDel);
-    //     cartData= cartData.filter(element=>element!==delObj);
-    //     document.getElementById(delObj.id).classList.remove('toggle-cart');
-    //     totalAmount();
-    //     cartItems();
-    // }
 
     chickenData.map(item=>{
         var itemCard= document.createElement('div');
@@ -280,13 +275,44 @@ function selectTaste(){
 selectTaste();
 
 
-document.querySelectorAll('.add-to-cart').forEach(item=>{
-    item.addEventListener('click',addToCart)
+// document.querySelectorAll('.add-to-cart').forEach(item=>{
+
+//     item.addEventListener('click',addToCart)
+    
+// })
+
+
+document.querySelectorAll('.uil-trash-alt').forEach(item=>{
+    item.addEventListener('click',deleteItem)
 })
+function deleteItem(){
+    console.log('deleting item');
+    var itemToDel=this.parentNode;
+    var card=itemToDel.parentNode;
+    console.log(card);
+    // var itemObj= foodItem.find(element=>element.name==itemToDel);
+    card.style.display='none';
+    // console.log(foodItem);
+    // foodItem.splice(itemObj);
+}
+
+// var clicking= document.getElementsByClassName('fa-shopping-cart');
+// for(var i=0;i<clicking.length;i++){
+//     clicking[i].addEventListener('click',addToCart)
+// }
+
+function editItem(){
+    var new_item= prompt('Enter the name','');
+    var item_name=this.parentNode.nextSibling.nextSibling;
+    item_name.innerText=new_item;
+}
+
 
 var cartData= [];
 function addToCart(){
     
+    console.log('Clicked');
+
     var itemToAdd= this.parentNode.nextSibling.nextSibling.innerText;
     var itemObj= foodItem.find(element=>element.name==itemToAdd);
 
@@ -476,12 +502,20 @@ function addEvents(){
     document.querySelectorAll('.add-to-cart').forEach(item=>{
         item.addEventListener('click',addToCart)
     });
+
+    document.querySelectorAll('.uil-trash-alt').forEach(item=>{
+        item.addEventListener('click',deleteItem);
+    })
+
     document.querySelectorAll('.increase-item').forEach(item=>{
         item.addEventListener('click',incrementItem)
     })
 
     document.querySelectorAll('.decrease-item').forEach(item=>{
         item.addEventListener('click',decrementItem)
+    })
+    document.querySelectorAll('.uil-pen').forEach(item=>{
+        item.addEventListener('click',editItem)
     })
 }
 
