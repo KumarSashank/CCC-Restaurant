@@ -10,9 +10,6 @@ function submitform() {
     if(mail==admin && pass==adminpass){
         window.location.href="admin.html";
     }
-    else if(mail==user && pass==userpass){
-        window.location.href="user.html";
-    }
     else if(mail==manager && pass==managerpass){
         window.location.href="1.managerPortal.html";
     }
