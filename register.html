@@ -30,16 +30,16 @@
                     </div>
                     <div class="input-field">
                         <i class="uil uil-envelope"></i>
-                        <input type="email" class="email" id="mail" placeholder="Enter your email" required>
+                        <input type="email" class="email" id="email" placeholder="Enter your email" required>
                     </div>
                     <div class="input-field">
                         <i class="uil uil-lock"></i>
-                        <input type-="password" class="password" id="pswd1" placeholder="Password" required>
+                        <input type-="password" class="password" id="password" placeholder="Password" required>
                     </div>
-                    <div class="input-field">
+                    <!-- <div class="input-field">
                         <i class="uil uil-lock"></i>
                         <input type-="password" class="password" id="pswd2" placeholder="Re enter password" required>
-                    </div>
+                    </div> -->
                     <div class="input-field button">
                         <input type="button" value="Register" cursor="pointer" id="signup" name="signup">
                     </div>
@@ -79,15 +79,13 @@
     const database = getDatabase(app);
     const auth = getAuth();
 
-signup.addEventListener('click',(e) => {
+    signup.addEventListener('click',(e) => {
 
-var email = document.getElementById('mail').value;
-var password = document.getElementById('pswd1').value;
-var password2 = document.getElementById('pswd2').value;
+var email = document.getElementById('email').value;
+var password = document.getElementById('password').value;
 var username = document.getElementById('username').value;
 
-if(password==password2){
-    createUserWithEmailAndPassword(auth, email, password)
+createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
    // Signed in 
     const user = userCredential.user;
@@ -98,7 +96,6 @@ if(password==password2){
     })
 
     alert('user created!');
-    window.location.href = "index.html";
     // ...
   })
   .catch((error) => {
@@ -108,11 +105,8 @@ if(password==password2){
     alert(errorMessage);
   // ..
   });
-}
-else{
-    alert('password does not match');}
-
-});
+  // get delay for 3secs
+    });
     
   </script>
 

@@ -79,40 +79,35 @@
     let managerpass="manager";
     sessionStorage.setItem('email',email);
 
-        if(email==admin && password==adminpass){
+        
+signInWithEmailAndPassword(auth, email, password)
+.then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+    const dt = new Date();
+    update(ref(database, 'users/' + user.uid),{
+    last_login: dt,
+    })
+
+    alert('User loged in!');
+    window.location.href = "user.html";
+    // ...
+})
+.catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert(errorMessage);
+});
+    if(email==admin && password==adminpass){
             window.location.href="admin.html";
         }
         else if(email==manager && password==managerpass){
             window.location.href="manager.html";
-        }
-        else{
-            signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-
-            const dt = new Date();
-            update(ref(database, 'users/' + user.uid),{
-            last_login: dt,
-            })
-
-            alert('User loged in!');
-            window.location.href = "user.html";
-            // ...
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-
-            alert(errorMessage);
-    });
-        }
+        } 
 
     });
-
-    export function register(){
-        window.location.href = "register.html";
-    }
     
   </script>
 

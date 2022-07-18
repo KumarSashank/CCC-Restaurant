@@ -71,4 +71,4 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 
     // console.log(items_db);
 
-export {items_db};
+// export {items_db};
