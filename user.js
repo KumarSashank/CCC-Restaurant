@@ -68,7 +68,7 @@ let new_items_db;
             const PaneerData= items_db.filter((item)=>item.category=='paneer');
             const vegetableData= items_db.filter((item)=>item.category=='vegetable');
             const chineseData= items_db.filter((item)=>item.category=='chinese');
-            const southData= items_db.filter((item)=>item.category=='south indian');
+            const southData= items_db.filter((item)=>item.category=='southIndian');
             biryaniData.map(item=>{
                 
                 var itemCard= document.createElement('div');

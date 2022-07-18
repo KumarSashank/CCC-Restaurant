@@ -354,7 +354,7 @@ chinese.setAttribute('value','chinese');
 chinese.innerText='Chinese';
 
 var southIndian= document.createElement('option');
-southIndian.setAttribute('value','south indian');
+southIndian.setAttribute('value','southIndian');
 southIndian.innerText='South Indian';
 
 item_category.appendChild(biryani);
