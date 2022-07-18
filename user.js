@@ -285,7 +285,7 @@ let new_items_db;
         displayItems();
 
 
-        const vegData= [...new Map(foodItem.map(item=> [item['category'],item])).values()];
+        const vegData= [...new Map(items_db.map(item=> [item['category'],item])).values()];
         console.log(vegData);
 
         function selectTaste(){
@@ -323,7 +323,7 @@ let new_items_db;
         function addToCart(){
             
             var itemToAdd= this.parentNode.nextSibling.nextSibling.innerText;
-            var itemObj= foodItem.find(element=>element.name==itemToAdd);
+            var itemObj= items_db.find(element=>element.name==itemToAdd);
 
             var index= cartData.indexOf(itemObj);
             if(index=== -1){
