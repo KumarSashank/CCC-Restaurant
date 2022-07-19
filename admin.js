@@ -299,7 +299,7 @@ var add_item_box=document.createElement('div');
 add_item_box.setAttribute('class','add-item-box');
 
 var headings= document.createElement('h3');
-headings.innerText='Add Item';
+headings.innerText='Add your items here';
 
 var add_item_form= document.createElement('form');
 add_item_form.setAttribute('id','add-item-form');
@@ -367,7 +367,7 @@ item_category.appendChild(southIndian);
 var add_item_btn= document.createElement('p');
 add_item_btn.setAttribute('id','add-item-btn');
 add_item_btn.setAttribute('name','add_item_btn');
-add_item_btn.innerText='Add Item';
+add_item_btn.innerText='Proceed Item';
 
 add_item_form.appendChild(item_id);
 add_item_form.appendChild(item_name);
