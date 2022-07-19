@@ -32,6 +32,9 @@ let new_items_db;
             snapshot.forEach((childSnapshot) => {
                 var x=childSnapshot.val();
                 console.log(x.name);
+                //convert string to int
+                x.quantity=parseInt(x.quantity);
+                x.price=parseInt(x.price);
                 items_db=[...items_db, {"id":x.id, "name": x.name, "price": x.price, "img": x.img,"category": x.category,"quantity": x.quantity}];
             });
             console.log(items_db);
