@@ -33,6 +33,10 @@
                         <input type="email" class="email" id="email" placeholder="Enter your email" required>
                     </div>
                     <div class="input-field">
+                        <i class="uil uil-phone"></i>
+                        <input type="number" class="email" id="phn_num" placeholder="Enter your mobile number" required>
+                    </div>
+                    <div class="input-field">
                         <i class="uil uil-lock"></i>
                         <input type-="password" class="password" id="password" placeholder="Password" required>
                     </div>
@@ -84,6 +88,7 @@
 var email = document.getElementById('email').value;
 var password = document.getElementById('password').value;
 var username = document.getElementById('username').value;
+var number = document.getElementById('phn_num').value;
 
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -92,7 +97,8 @@ createUserWithEmailAndPassword(auth, email, password)
 
     set(ref(database, 'users/' + user.uid),{
         username: username,
-        email: email
+        email: email,
+        number: number,
     })
 
     alert('user created!');
