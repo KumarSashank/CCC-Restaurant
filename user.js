@@ -471,6 +471,15 @@ let new_items_db;
             }
         }
 
+        function placeOrder(){
+            console.log('Order clicked');
+            
+        }
+
+        document.querySelectorAll('.place_order').forEach(item=>{
+            item.addEventListener('click',placeOrder)
+        });
+
 
 
         window.onresize= window.onload= function(){
