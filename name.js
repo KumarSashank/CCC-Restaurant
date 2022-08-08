@@ -21,6 +21,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
     const database = getDatabase(app);
     const auth = getAuth();
     var mail=sessionStorage.getItem('email');
+    // var mobile="1234567890";
 
     const dbRef = ref(getDatabase());
     get(child(dbRef, `users/`)).then((snapshot) => {
@@ -33,8 +34,11 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
             var name=data.username;
             console.log(name);
             var email=data.email;
+            var mobile=data.number;
+            console.log(mobile);
             if(email==mail){
                 document.getElementById("username").innerHTML="Hello, "+name;
+                sessionStorage.setItem('mobile',mobile);
             }
         });
         const data=snapshot.val();
@@ -46,6 +50,8 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
     }).catch((error) => {
     console.error(error);
     });
+    sessionStorage.setItem('mobile',mobile);
+    console.log(mobile);
 
     // var items_db=[];
     // get(child(dbRef, `items/`)).then((snapshot) => {
