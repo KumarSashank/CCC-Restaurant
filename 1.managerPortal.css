@@ -27,7 +27,7 @@ header{
     padding-top: 2em;
     padding-left: 5em;
     padding-bottom: 2em;
-    overflow-x: hidden;
+    display: block;
 }
 
 .menu-1{
@@ -38,7 +38,7 @@ header{
     transition: transform .4s;
     border: 0em solid #000;
     border-radius: 1em;
-    float: left;
+    display: inline-block;
     margin: 2em;
 }
 
@@ -64,7 +64,7 @@ header{
     transition: transform .4s;
     border: 0em solid #000;
     border-radius: 1em;
-    float: left;
+    display: inline-block;
     margin: 2em;
 }
 
@@ -90,7 +90,7 @@ header{
     transition: transform .4s;
     border: 0em solid #000;
     border-radius: 1em;
-    float: left;
+    display: inline-block;
     margin: 2em;
 }
 
@@ -112,13 +112,12 @@ header{
     margin-top: 2em;
     margin-left: 5em;
     margin-bottom: 2em;
-    vertical-align: bottom;
+    display: block;
 }
 
 table{
     margin-top: 2.5em;
     margin-left: 2em;
-    overflow-x: hidden;
     text-align: left;
 }
 
