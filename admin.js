@@ -89,7 +89,7 @@ get(child(dbRef, `items/`))
           (item) => item.category == "chinese"
         );
         const southData = items_db.filter(
-          (item) => item.category == "south indian"
+          (item) => item.category == "southIndian"
         );
         biryaniData.map((item) => {
           var itemCard = document.createElement("div");
